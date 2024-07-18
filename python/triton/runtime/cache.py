@@ -7,15 +7,15 @@ from typing import Dict, Optional
 
 
 def default_cache_dir():
-    return os.path.join(Path.home(), ".triton", "cache")
+    return os.path.join(os.getenv("WORKSPACE", Path.home()), ".triton", "cache")
 
 
 def default_override_dir():
-    return os.path.join(Path.home(), ".triton", "override")
+    return os.path.join(os.getenv("WORKSPACE", Path.home()), ".triton", "override")
 
 
 def default_dump_dir():
-    return os.path.join(Path.home(), ".triton", "dump")
+    return os.path.join(os.getenv("WORKSPACE", Path.home()), ".triton", "dump")
 
 
 class CacheManager(ABC):
