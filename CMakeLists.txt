@@ -35,7 +35,7 @@ set(TRITON_CODEGEN_BACKENDS "" CACHE STRING "Enable different codegen backends")
 
 # Force TRITON_USE_ROCM for ROCm support
 set(TRITON_USE_ROCM ON)
-set(ROCM_DEFAULT_DIR "/opt/rocm")
+set(ROCM_DEFAULT_DIR "$ENV{ROCM_HOME}")
 add_definitions( -DROCM_DEFAULT_DIR="${ROCM_DEFAULT_DIR}")
 
 # Ensure Python3 vars are set correctly

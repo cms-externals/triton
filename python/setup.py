@@ -229,7 +229,7 @@ class CMakeBuild(build_ext):
         print(f'build_extension {ext}')
         lit_dir = shutil.which('lit')
         ninja_dir = shutil.which('ninja')
-        user_home = os.getenv("HOME") or os.getenv("USERPROFILE") or \
+        user_home = os.getenv("WORKSPACE") or os.getenv("HOME") or os.getenv("USERPROFILE") or \
             os.getenv("HOMEPATH") or None
         if not user_home:
             raise RuntimeError("Could not find user home directory")
